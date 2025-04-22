@@ -1,0 +1,1973 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.float-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow-y: scroll;
+  pointer-events: none; 
+}
+
+.ball {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation-name: float;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes float {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(var(--x), var(--y));
+  }
+}
+
+.center-text {
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 200px;
+  color: #000000;
+  font-weight: 600;
+  z-index: 10;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.center-text.hidden {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* intro-screen 고정 */
+.intro-screen {
+  top: 0;
+  left: 0;
+  width: 1520px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* 화면 최상위 */
+  transition: opacity 0.5s ease-out; /* 애니메이션 추가 */
+}
+
+.intro-screen.hide {
+  opacity: 0;
+  visibility: hidden; /* 숨길 때 공간을 차지하지 않음 */
+}
+
+.center-text {
+  color: rgb(0, 0, 0);
+  font-size: 200px;
+  font-family: "Heiti SC-Light", Helvetica;
+}
+
+.hidden {
+  display: none; /* 텍스트 숨기기 */
+}
+html,body {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+
+.desktop {
+  width: 1520px;
+  height: 100%;
+  background-color: #ff1818;
+  overflow: visible; /* hidden을 visible로 변경 */
+}
+
+.desktop .overlap {
+  width: 1520px;
+  height: 34vh;              /* 화면 높이의 70% */
+  background-color: rgb(255, 255, 255);
+  position: fixed;           /* 화면에 고정 */
+  bottom: 0;                 /* 하단에 붙임 */
+  left: 0;
+  position: relative;
+  
+}
+
+.desktop .overlap-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+}
+
+.desktop .rectangle {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  top: 200px;
+  left: 0;
+  background-color: #f90909; /* color 대신 background-color로 수정 */
+}
+
+.desktop .text-wrapper {
+  width: 444px;
+  top: 500px; 
+  left: 1152px;
+  transform: rotate(-90.00deg);
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  font-size: 143.5px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-1 {
+  position: absolute;
+  top: 487px;
+  left: 499px;
+  transform: rotate(13.21deg);
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  color: #000000;
+  font-size: 40.1px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-2 {
+  top: 570px;
+  left: -100px;
+  transform: rotate(-90.43deg);
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 40.1px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-3 {
+  position: absolute;
+  top: 320px;
+  left: 530px;
+  transform: rotate(-0.46deg);
+  font-family: "Roboto-CondensedBlack Italic", Helvetica;
+  font-weight: 900;
+  font-style: italic;
+  color: #000000;
+  font-size: 40.1px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-4 {
+  position: absolute;
+  width: 272px;
+  top: 579px;
+  left: 234px;
+  transform: rotate(100.78deg);
+  font-family: "Roboto-CondensedBlack Italic", Helvetica;
+  font-weight: 900;
+  font-style: italic;
+  color: #000000;
+  font-size: 27.8px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-5 {
+  position: absolute;
+  top: 557px;
+  left: 353px;
+  transform: rotate(67.60deg);
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  color: #000000;
+  font-size: 38.8px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-6 {
+  position: absolute;
+  top: 522px;
+  left: 150px;
+  transform: rotate(-53.71deg);
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  color: #000000;
+  font-size: 38.8px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-7 {
+  position: absolute;
+  top: 379px;
+  left: 531px;
+  transform: rotate(5.49deg);
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 47.2px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-8 {
+  position: absolute;
+  top: 515px;
+  left: 444px;
+  transform: rotate(33.68deg);
+  font-family: "Roboto-Italic", Helvetica;
+  font-weight: 400;
+  font-style: italic;
+  color: #000000;
+  font-size: 47.2px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-9 {
+  position: absolute;
+  top: 301px;
+  left: 41px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 112px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-10 {
+  position: absolute;
+  top: 12px;
+  left: 0px;
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 316.7px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-11 {
+  position: absolute;
+  top: 85px;
+  left: 1020px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 189.4px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* 세번째 화면 */
+.overlap-wrapper {
+  width: 1520px;
+  height: 100%;
+  background-color: #b4b4b4;
+  overflow: visible; /* hidden을 visible로 변경 */
+}
+
+.overlap-wrapper .overlap-2 {
+  width: 1520px;
+  height: 34vh;              /* 화면 높이의 70% */
+  background-color: rgb(255, 255, 255);
+  position: fixed;           /* 화면에 고정 */
+  bottom: 0;                 /* 하단에 붙임 */
+  left: 0;
+  position: relative;
+  
+}
+
+.overlap-wrapper .overlap-group-3 {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 70%;
+}
+
+.overlap-wrapper .rectangle2 {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  top: 200px;
+  left: 0;
+  background-color: #b4b4b4; /* color 대신 background-color로 수정 */
+}
+.overlap-wrapper .text-wrapper-12 {
+  position: absolute;
+  top: 300px;
+  left: 42px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 145.6px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-wrapper .text-wrapper-13 {
+  position: absolute;
+  top: 12px;
+  left: 0px;
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 316.7px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-wrapper .text-wrapper-14 {
+  width: 444px;
+  top: 500px; 
+  left: 1152px;
+  transform: rotate(-90.00deg);
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  font-size: 143.5px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-wrapper .text-wrapper-15 {
+  top: 590px;
+  left: -100px;
+  transform: rotate(-90.43deg);
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 40.1px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;;
+}
+
+.overlap-wrapper .text-wrapper-16 {
+  top: 519px; 
+  left: 497px;
+  transform: rotate(13.21deg);
+  font-family: "Roboto-Extralight", Helvetica;
+  font-weight: 200;
+  font-size: 41.2px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-wrapper .text-wrapper-17 {
+  top: 565px;
+  left: 412px;
+  transform: rotate(-0.46deg);
+  font-family: "Roboto-CondensedBlack Italic", Helvetica;
+  font-weight: 900;
+  font-size: 41.2px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-wrapper .text-wrapper-18 {
+  top: 533px;
+  left: 140px;
+  transform: rotate(-38.96deg);
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  font-size: 39.9px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-wrapper .text-wrapper-19 {
+  position: absolute;
+  top: 533px;
+  left: 169px;
+  transform: rotate(-22.05deg);
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  color: #000000;
+  font-size: 39.9px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-wrapper .text-wrapper-20 {
+  position: absolute;
+  width: 460px;
+  top: 728px;
+  left: 234px;
+  transform: rotate(5.49deg);
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-wrapper .text-wrapper-21 {
+  position: absolute;
+  top: 654px;
+  left: 275px;
+  transform: rotate(-5.06deg);
+  font-family: "Roboto-Italic", Helvetica;
+  font-weight: 200;
+  font-style: italic;
+  color: #000000;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-wrapper .text-wrapper-22 {
+  position: absolute;
+  top: 652px;
+  left: 742px;
+  transform: rotate(3.68deg);
+  font-family: "Roboto-CondensedExtraLight Italic", Helvetica;
+  font-weight: 200;
+  color: #000000;
+  font-style: italic;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-wrapper .text-wrapper-23 {
+  position: absolute;
+  top: 380px;
+  left: 678px;
+  transform: rotate(-26.73deg);
+  font-family: "Roboto-CondensedRegular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 38.8px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-wrapper .text-wrapper-24 {
+  position: absolute;
+  top: 85px;
+  left: 957px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 189.4px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+/* 네번째 화면 */
+.overlapwrapper2 {
+  width: 1520px;
+  height: 100%;
+  background-color: #3d8959;
+  overflow: visible; /* hidden을 visible로 변경 */
+}
+
+.overlapwrapper2 .overlap-3 {
+  width: 1520px;
+  height: 34vh;              /* 화면 높이의 70% */
+  background-color: rgb(255, 255, 255);
+  position: fixed;           /* 화면에 고정 */
+  bottom: 0;                 /* 하단에 붙임 */
+  left: 0;
+  position: relative;
+  
+}
+
+.overlapwrapper2 .overlap-group-4 {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 70%;
+}
+
+.overlapwrapper2 .rectangle-2 {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 200px;
+  left: 0;
+  background-color: #ffffff; /* color 대신 background-color로 수정 */
+}
+.overlapwrapper2 .text-wrapper-25 {
+  position: absolute;
+  top: 300px;
+  left: 50px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 145.6px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-26 {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 316.7px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-27 {
+  width: 444px;
+  top: 500px; 
+  left: 1152px;
+  transform: rotate(-90.00deg);
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  font-size: 143.5px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-28 {
+  top: 600px;
+  left: -100px;
+  transform: rotate(-90.43deg);
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 40.1px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;;
+}
+
+.overlapwrapper2 .text-wrapper-29 {
+  top: 350px; 
+  left: 490px;
+  font-family: "Roboto-Extralight", Helvetica;
+  font-weight: 200;
+  font-size: 41.2px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-30 {
+  top: 620px;
+  left: 411px;
+  font-family: "Roboto-CondensedThin", Helvetica;
+  font-weight: 100;
+  font-size: 41.2px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-31 {
+  top: 514px;
+  left: 100px;
+  font-family: "Roboto-CondensedThin", Helvetica;
+  font-weight: 100;
+  font-size: 168px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-32 {
+  position: absolute;
+  top: 380px;
+  left: 475px;
+  font-family: "Roboto-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 41.2px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-33 {
+  position: absolute;
+  top: 455px;
+  left: 350px;
+  font-family: "Roboto-CondensedBlack Italic", Helvetica;
+  font-weight: 900;
+  font-style: italic;
+  color: #000000;
+  font-size: 41.2px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-34 {
+  position: absolute;
+  top: 455px;
+  left: 940px;
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  color: #000000;
+  font-size: 39.9px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-35 {
+  position: absolute;
+  top: 415px;
+  left: 500px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-36 {
+  position: absolute;
+  top: 700px;
+  left: 100px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-37 {
+  position: absolute;
+  top: 700px;
+  left: 850px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-38 {
+  position: absolute;
+  top: 570px;
+  left: 400px;
+  font-family: "Roboto-Black", Helvetica;
+  font-weight: 900;
+  color: #000000;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-39 {
+  position: absolute;
+  width: 844px;
+  top: 490px;
+  left: 383px;
+  font-family: "PSL Ornanong Pro-LightItalic", Helvetica;
+  font-weight: 300;
+  font-style: italic;
+  color: #000000;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-40 {
+  position: absolute;
+  width: 853px;
+  top: 660px;
+  left: 460px;
+  font-family: "PSL Ornanong Pro-LightItalic", Helvetica;
+  font-weight: 300;
+  font-style: italic;
+  color: #000000;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlapwrapper2 .text-wrapper-41 {
+  position: absolute;
+  width: 910px;
+  top: 530px;
+  left: 390px;
+  font-family: "PSL Ornanong Pro-Blod", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 48.58px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+.overlapwrapper2 .text-wrapper-42 {
+  position: absolute;
+  top: 85px;
+  left: 957px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 189.4px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+/* 다섯번째 화면 */
+.overlap-g {
+  width: 1520px;
+  height: 100%;
+  background-color: #b4b4b4;
+  overflow: visible; 
+}
+
+.overlap-g .overlap-4 {
+  width: 1520px;
+  height: 34vh;              /* 화면 높이의 70% */
+  background-color: rgb(255, 255, 255);
+  position: fixed;           /* 화면에 고정 */
+  bottom: 0;                 /* 하단에 붙임 */
+  left: 0;
+  position: relative;
+  
+}
+
+.overlapw-g .overlap-group-5 {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 70%;
+}
+
+.overlapw-g .rectangle-3 {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  top: 200px;
+  left: 0;
+  background-color: #b4b4b4; /* color 대신 background-color로 수정 */
+}
+
+.overlap-g .text-wrapper-43 {
+  position: absolute;
+  top: 300px;
+  left: 42px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 145.6px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+.overlap-g .text-wrapper-44 {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 316.7px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .text-wrapper-45 {
+  width: 444px;
+  top: 500px; 
+  left: 1152px;
+  transform: rotate(-90.00deg);
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  font-size: 143.5px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .text-wrapper-46 {
+  top: 590px;
+  left: -100px;
+  transform: rotate(-90.43deg);
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 40.1px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;;
+}
+
+.overlap-g .o-OOO-oooo-OO-ooo{
+  position: absolute;
+  top: 562px;
+  left: 433px;
+  transform: rotate(11.04deg);
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 41.2px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .span {
+  font-weight: 200;
+}
+
+.overlap-g .text-wrapper-47 {
+  font-family: "Roboto-Bold", Helvetica;
+  font-weight: 700;
+}
+
+.overlap-g .text-wrapper-48 {
+  font-family: "Roboto-Medium", Helvetica;
+  font-weight: 500;
+}
+
+.overlap-g .zzzzz-ZZ-zzz-zzz-zzz{
+  position: absolute;
+  top: 640px;
+  left: 370px;
+  transform: rotate(0.42deg);
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 41.2px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .text-wrapper-49{
+  font-weight: 300;
+}
+
+.overlap-g .text-wrapper-50{
+  font-family: "Redacted Script-Regular", Helvetica;
+}
+
+.overlap-g .text-wrapper-51{
+  position: absolute;
+  top: 380px;
+  left: 690px;
+  transform: rotate(160.09deg);
+  font-family: "Redacted Script-Regular", Helvetica;
+  font-weight: 100;
+  color: #000000;
+  font-size: 30.9px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .p{
+  position: absolute;
+  top: 470px;
+  left: 148px;
+  transform: rotate(0.42deg);
+  font-family: "Noto Sans SC-Light", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 41.2px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .text-wrapper-52{
+  font-family: "Noto Sans SC-Regular", Helvetica;
+}
+
+.overlap-g .text-wrapper-53{
+  position: absolute;
+  top: 540px;
+  left: 129px;
+  transform: rotate(-10.74deg);
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  color: #000000;
+  font-size: 58.1px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .text-wrapper-54{
+  position: absolute;
+  top: 730px;
+  left: 269px;
+  transform: rotate(-0.46deg);
+  font-family: "Roboto-ExtraLightItalic", Helvetica;
+  font-weight: 200;
+  font-style: italic;
+  color: #000000;
+  font-size: 41.2px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .text-wrapper-55{
+  position: absolute;
+  top: 700px;
+  left: 186px;
+  transform: rotate(-0.46deg);
+  font-family: "Roboto-ExtraLightItalic", Helvetica;
+  font-weight: 200;
+  font-style: italic;
+  color: #000000;
+  font-size: 41.2px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .text-wrapper-56{
+  position: absolute;
+  top: 483px;
+  left: 680px;
+  transform: rotate(-1.18deg);
+  font-family: "Outfit-Light", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .text-wrapper-57{
+  position: absolute;
+  top: 384px;
+  left: 888px;
+  transform: rotate(-1.18deg);
+  font-family: "Noto-Sans TC-Black", Helvetica;
+  font-weight: 900;
+  color: #000000;
+  font-size: 77px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .text-wrapper-58{
+  position: absolute;
+  top: 595px;
+  left: 390px;
+  transform: rotate(-177.15deg);
+  font-family: "Roboto-CondensedBold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 38.8px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .text-wrapper-59{
+  position: absolute;
+  top: 740px;
+  left: 920px;
+  transform: rotate(-177.15deg);
+  font-family: "Roboto-CondensedExtraBold", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 38.8px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .text-wrapper-60{
+  position: absolute;
+  top: 657px;
+  left: 948px;
+  transform: rotate(-9.09deg);
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  color: #000000;
+  font-size: 38.8px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-g .text-wrapper-61 {
+  position: absolute;
+  top: 85px;
+  left: 957px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 189.4px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* 네번째 화면 */
+.overlap-gr {
+  width: 1520px;
+  height: 100%;
+  background-color: #285c3b;
+  overflow: visible; /* hidden을 visible로 변경 */
+}
+
+.overlap-gr .overlap-5 {
+  width: 1520px;
+  height: 34vh;              /* 화면 높이의 70% */
+  background-color: #202020;
+  position: fixed;           /* 화면에 고정 */
+  bottom: 0;                 /* 하단에 붙임 */
+  left: 0;
+  position: relative;
+  
+}
+
+.overlap-gr .overlap-group-6 {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 70%;
+}
+
+.overlap-gr .rectangle-4 {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 200px;
+  left: 0;
+  background-color: #202020; /* color 대신 background-color로 수정 */
+}
+.overlap-gr .text-wrapper-25 {
+  position: absolute;
+  top: 300px;
+  left: 50px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #c7c7c7;
+  font-size: 145.6px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .text-wrapper-26 {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  color: #c7c7c7;
+  font-size: 316.7px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .text-wrapper-27 {
+  width: 444px;
+  top: 500px; 
+  left: 1152px;
+  transform: rotate(-90.00deg);
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  font-size: 143.5px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .text-wrapper-28 {
+  top: 600px;
+  left: -100px;
+  transform: rotate(-90.43deg);
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 40.1px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .text-wrapper-62 {
+  top: 410px;
+  left: 530px;
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  font-size: 41.2px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .text-wrapper-63 {
+  top: 350px;
+  left: 1020px;
+  font-family: "Roboto-BlackItalic", Helvetica;
+  font-weight: 900;
+  font-size: 60.5px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .yum-yum {
+  top: 550px;
+  left: 1146px;
+  transform: rotate(90deg);
+  font-family: "Roboto-Black", Helvetica;
+  font-weight: 400;
+  font-size: 61.9px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .span {
+  font-family: "Roboto-BlacktItalic", Helvetica;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.overlap-gr .text-wrapper-64 {
+  font-family: "Roboto-ExtraLightItalic", Helvetica;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.overlap-gr .text-wrapper-65 {
+  top: 647px;
+  left: 301px;
+  font-family: "Roboto-CondensedThin", Helvetica;
+  font-weight: 100;
+  font-size: 41.2px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .text-wrapper-66 {
+  top: 570px;
+  left: 39px;
+  transform: rotate(-90deg);
+  font-family: "Roboto-CondensedExtraLight Italic", Helvetica;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 140px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .text-wrapper-67 {
+  position: absolute;
+  top: 490px;
+  left: 270px;
+  font-family: "Roboto-CondensedBlack Italic", Helvetica;
+  font-weight: 900;
+  font-style: italic;
+  color: #c7c7c7;
+  font-size: 41.2px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .text-wrapper-68 {
+  position: absolute;
+  top: 370px;
+  left: 743px;
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  font-style: italic;
+  color: #c7c7c7;
+  font-size: 39.9px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .text-wrapper-69 {
+  position: absolute;
+  top: 450px;
+  left: 603px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #c7c7c7;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .text-wrapper-70 {
+  position: absolute;
+  top: 579px;
+  left: 334px;
+  font-family: "Roboto-CondensedRegular", Helvetica;
+  font-weight: 400;
+  color: #c7c7c7;;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .text-wrapper-71 {
+  position: absolute;
+  width: 844px;
+  top: 535px;
+  left: 265px;
+  font-family: "PSL Ornanong Pro-LightItalic", Helvetica;
+  font-weight: 300;
+  font-style: italic;
+  color: #c7c7c7;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .crunchcrunchcrunchcr {
+  position: absolute;
+  top: 680px;
+  left: 309px;
+  font-family: "PSL Ornanong Pro-Light", Helvetica;
+  font-weight: 400;
+  color: #c7c7c7;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gr .text-wrapper-72 {
+  font-family: "PSL Ornanong Pro-LightItalic", Helvetica;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.overlap-gr .text-wrapper-73 {
+  font-family: "PSL Ornanong Pro-LightItalic", Helvetica;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 96px;
+}
+
+.overlap-gr .text-wrapper-74 {
+  font-family: "PSL Ornanong Pro-LightItalic", Helvetica;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 50px;
+}
+
+.overlap-gr .text-wrapper-75 {
+  position: absolute;
+  top: 599px;
+  left: 814px;
+  font-family: "Roboto-CondensedItalic", Helvetica;
+  font-weight: 400;
+  font-style: italic;
+  color: #c7c7c7;
+  font-size: 48.5px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+.overlap-gr .text-wrapper-42 {
+  position: absolute;
+  top: 85px;
+  left: 957px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #c7c7c7;
+  font-size: 189.4px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+/* 여섯번 째 화면*/
+.overlap-gro {
+  width: 1520px;
+  height: 100%;
+  background-color: #b41212;
+  overflow: visible; /* hidden을 visible로 변경 */
+}
+
+.overlap-gro .overlap-6 {
+  width: 1520px;
+  height: 34vh;              /* 화면 높이의 70% */
+  background-color: #202020;
+  position: fixed;           /* 화면에 고정 */
+  bottom: 0;                 /* 하단에 붙임 */
+  left: 0;
+  position: relative;
+  
+}
+
+.overlap-gro .overlap-group-7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+}
+
+.overlap-gro .rectangle-5 {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 200px;
+  left: 0;
+  background-color: #202020; /* color 대신 background-color로 수정 */
+}
+
+.overlap-gro .text-wrapper-25 {
+  position: absolute;
+  top: 300px;
+  left: 50px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #c7c7c7;
+  font-size: 145.6px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-26 {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  color: #c7c7c7;
+  font-size: 316.7px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-27 {
+  width: 444px;
+  top: 500px; 
+  left: 1152px;
+  transform: rotate(-90.00deg);
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  font-size: 143.5px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-28 {
+  top: 600px;
+  left: -100px;
+  transform: rotate(-90.43deg);
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 40.1px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-76 {
+  top: 475px;
+  left: 415px;
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  font-size: 41.2px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-77 {
+  top: 650px;
+  left: 439px;
+  font-family: "Roboto-CondensedThin", Helvetica;
+  font-weight: 100;
+  font-size: 41.2px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-78 {
+  top: 450px;
+  left: 130px;
+  font-family: "Roboto-Medim", Helvetica;
+  font-weight: 500;
+  font-size: 41.2px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-79 {
+  top: 510px;
+  left: 506px;
+  font-family: "Roboto-CondensedBlack Italic", Helvetica;
+  font-weight: 900;
+  font-size: 41.2px;
+  font-style: italic;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-80 {
+  top: 462px;
+  left: 991px;
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  font-size: 39.9px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-81 {
+  top: 670px;
+  left: 184px;
+  font-family: "Roboto-Mediumitalic", Helvetica;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 39.9px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .aaaaaaaaaaah {
+  top: 380px;
+  left: 870px;
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 400;
+  font-size: 64.6px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .span{
+  font-family: "Roboto-ExtraLightItalic", Helvetica;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.overlap-gro .text-wrapper-82{
+  font-family: "Roboto-CondensedBold Italic", Helvetica;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.overlap-gro .text-wrapper-83 {
+  top: 720px;
+  left: 151px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 48.5px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-84 {
+  top: 670px;
+  left: 627px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 48.5px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-85 {
+  top: 615px;
+  left: 632px;
+  font-family: "Roboto-Black", Helvetica;
+  font-weight: 900;
+  font-size: 48.5px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-86 {
+  width: 1136px;
+  top: 486px;
+  left: 119px;
+  font-family: "PSL Ornanong Pro-LightItalic", Helvetica;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 48.5px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-87 {
+  width: 853px;
+  top: 710px;
+  left: 415px;
+  font-family: "PSL Ornanong Pro-LightItalic", Helvetica;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 48.5px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-88 {
+  width: 910px;
+  top: 540px;
+  left: 349px;
+  font-family: "PSL Ornanong Pro-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 48.5px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-89 {
+  width: 910px;
+  top: 570px;
+  left: 104px;
+  font-family: "PSL Ornanong Pro-LightItalic", Helvetica;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 48.5px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-gro .text-wrapper-42 {
+  position: absolute;
+  top: 85px;
+  left: 957px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #c7c7c7;
+  font-size: 189.4px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* 일곱번쨰 화면*/
+.overlap-grou {
+  width: 1520px;
+  height: 100%;
+  background-color: #8a8989;
+  overflow: visible; /* hidden을 visible로 변경 */
+}
+
+.overlap-grou .overlap-7 {
+  width: 1520px;
+  height: 34vh;              /* 화면 높이의 70% */
+  background-color: #202020;
+  position: fixed;           /* 화면에 고정 */
+  bottom: 0;                 /* 하단에 붙임 */
+  left: 0;
+  position: relative;
+  
+}
+
+.overlap-grou .overlap-group-8 {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 70%;
+}
+
+.overlap-grou .rectangle-6 {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 200px;
+  left: 0;
+  background-color: #202020; /* color 대신 background-color로 수정 */
+}
+
+.overlap-grou .text-wrapper-25 {
+  position: absolute;
+  top: 300px;
+  left: 50px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #c7c7c7;
+  font-size: 145.6px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .text-wrapper-26 {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  color: #c7c7c7;
+  font-size: 316.7px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .text-wrapper-27 {
+  width: 444px;
+  top: 500px; 
+  left: 1152px;
+  transform: rotate(-90.00deg);
+  font-family: "Heiti SC-Light", Helvetica;
+  font-weight: 300;
+  font-size: 143.5px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .text-wrapper-28 {
+  top: 625px;
+  left: -100px;
+  transform: rotate(-90.43deg);
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 40.1px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .text-wrapper-90 {
+  width: 236px;
+  top: 470px;
+  left: 1109px;
+  transform: rotate(90deg);
+  font-family: "Karla-Bold", Helvetica;
+  font-weight: 400;
+  font-size: 33.9px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .text-wrapper-91 {
+  width: 110px;
+  top: 680px;
+  left: 1094px;
+  transform: rotate(-90.00deg);
+  font-family: "Karla-Italic", Helvetica;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 52.7px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .text-wrapper-92 {
+  top: 490px;
+  left: 944px;
+  transform: rotate(90deg);
+  font-family: "Roboto-CondensedBlak Italic", Helvetica;
+  font-weight: 900;
+  font-size: 102.2px;
+  font-style: italic;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .text-wrapper-93 {
+  width: 126px;
+  top: 700px;
+  left: 900px;
+  transform: rotate(-90.00deg);
+  font-family: "Karla-ExtraBoldItalic", Helvetica;
+  font-weight: 800;
+  font-size: 27.5px;
+  font-style: italic;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .text-wrapper-94 {
+  top: 640px;
+  left: 567px;
+  transform: rotate(90deg);
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  font-size: 46.4px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .text-wrapper-95 {
+  top: 424px;
+  left: 706px;
+  transform: rotate(-90.00deg);
+  font-family: "Roboto-CondensedRegular", Helvetica;
+  font-weight: 200;
+  font-size: 64.6px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .text-wrapper-96 {
+  top: 680px;
+  left: 750px;
+  transform: rotate(90deg);
+  font-family: "Roboto-CondensedRegular", Helvetica;
+  font-weight: 100;
+  font-size: 30px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .text-wrapper-97 {
+  width: 236px;
+  top: 598px;
+  left: 500px;
+  transform: rotate(-90.00deg);
+  font-family: "Karla-Italic", Helvetica;
+  font-weight: 400;
+  font-size: 52.7px;
+  font-style: italic;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .text-wrapper-98 {
+  top: 648px;
+  left: 366px;
+  transform: rotate(90deg);
+  font-family: "Roboto-Bold", Helvetica;
+  font-weight: 700;
+  font-size: 89.3px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .text-wrapper-99 {
+  top: 670px;
+  left: 88px;
+  transform: rotate(-90.00deg);
+  font-family: "Roboto-CondensedExtraLight Italic", Helvetica;
+  font-weight: 200;
+  font-size: 64.6px;
+  font-style: italic;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .p {
+  top: 466px;
+  left: 247px;
+  font-family: "Roboto-ExtraLight", Helvetica;
+  font-weight: 200;
+  font-size: 120px;
+  position: absolute;
+  color: #c7c7c7;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.overlap-grou .span{
+  font-family: "Roboto-CondensedExtraLight Italic", Helvetica;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.overlap-grou .text-wrapper-100{
+  font-family: "Roboto-CondensedBlack Italic", Helvetica;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.overlap-grou .text-wrapper-42 {
+  position: absolute;
+  top: 85px;
+  left: 957px;
+  font-family: "Heiti SC-Medium", Helvetica;
+  font-weight: 500;
+  color: #c7c7c7;
+  font-size: 189.4px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}

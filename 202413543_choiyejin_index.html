@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/202413543_choiyejin_main.css" />
+    <link rel="stylesheet" href="css/202413543_choiyejin_guide.css" />
+  </head>
+  <body>  
+    <div class="intro-screen">
+        <div class="float-container"></div>
+        <div class="center-text">me</div>
+    </div>
+    <script>
+        // 공 생성
+        const container = document.querySelector('.float-container');
+        const colors = ['#FF2929', '#989898', '#217d13'];
+    
+        for (let i = 0; i < 70; i++) {
+          const ball = document.createElement('div');
+          ball.classList.add('ball');
+    
+          const color = colors[i % colors.length];
+          const size = Math.floor(Math.random() * 30) + 10;
+          const posX = Math.random() * window.innerWidth;
+          const posY = Math.random() * window.innerHeight;
+          const moveX = (Math.random() - 0.5) * 400;
+          const moveY = (Math.random() - 0.5) * 400;
+          const duration = Math.random() * 10 + 3;
+    
+          ball.style.backgroundColor = color;
+          ball.style.width = `${size}px`;
+          ball.style.height = `${size}px`;
+          ball.style.left = `${posX}px`;
+          ball.style.top = `${posY}px`;
+          ball.style.animationDuration = `${duration}s`;
+          ball.style.setProperty('--x', `${moveX}px`);
+          ball.style.setProperty('--y', `${moveY}px`);
+    
+          container.appendChild(ball);
+        }
+    
+        
+        // intro 사라지기
+          const introScreen = document.querySelector('.intro-screen');
+          const centerText = document.querySelector('.center-text');
+  
+          window.addEventListener('scroll', () => {
+          const hidePoint = window.innerHeight * 0.5; // 스크롤 위치의 절반
+          if (window.scrollY > hidePoint) {
+              introScreen.classList.add('hide');  // 숨기기
+              centerText.classList.add('hidden'); // 텍스트 숨기기
+          } else {
+              introScreen.classList.remove('hide');  // 보이게
+              centerText.classList.remove('hidden'); // 텍스트 보이게
+          }
+          });
+  
+    </script>
+      
+
+    <div class="desktop">
+      <div class="overlap">
+        <div class="overlap-group">
+          <div class="text-wrapper">&gt;&gt;&gt;&gt;&gt;</div>
+          <div class="text-wrapper-1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah</div>
+          <div class="text-wrapper-2">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
+          <div class="text-wrapper-3">aaaaaAaaAAAAaaaaaaaaaAaaaaaaaaaaaaah</div>
+          <div class="text-wrapper-4">aaaaaAaaAAAaaaaAaaah</div>
+          <div class="text-wrapper-5">aaaaaaaaaaah</div>
+          <div class="text-wrapper-6">aaaaaaaaaaah</div>
+          <div class="text-wrapper-7">oooooooooooooops</div>
+          <div class="text-wrapper-8">ooooooooooops</div>
+          <div class="text-wrapper-9">wake up</div>
+          <div class="text-wrapper-10">I’m</div>
+        </div>
+        <div class="text-wrapper-11">8 am</div>
+      </div>
+    </div>
+    <div class="overlap-wrapper">
+        <div class="overlap-2">
+          <div class="overlap-group-3">
+            <div class="rectangle-1"></div>
+            <div class="text-wrapper-12">school</div>
+            <div class="text-wrapper-13">I’m</div>
+            <div class="text-wrapper-14">&gt;&gt;&gt;&gt;&gt;</div>
+            <div class="text-wrapper-15">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
+            <div class="text-wrapper-16">hmmmmmmhmmmhmmhmmhhhmmmm</div>
+            <div class="text-wrapper-17">SHHHhhshhhhshssshhh</div>
+            <div class="text-wrapper-18">aaaaaaaaaaah</div>
+            <div class="text-wrapper-19">aaaaaaaaaaah</div>
+            <div class="text-wrapper-20">eheheheheh??eh?eh???eh</div>
+            <div class="text-wrapper-21">yawnyawnnnyaaawn</div>
+            <div class="text-wrapper-22">yawnyawnnnyaaawn</div>
+            <div class="text-wrapper-23">aaaaaaaaaaah</div>
+          </div>
+          <div class="text-wrapper-24">10 am</div>
+        </div>
+      </div>
+      <div class="overlapwrapper2">
+        <div class="overlap-3">
+          <div class="overlap-group-4">
+            <div class="rectangle-2"></div>
+            <div class="text-wrapper-25">lunch</div>
+            <div class="text-wrapper-26">I’m</div>
+            <div class="text-wrapper-27">&gt;&gt;&gt;&gt;&gt;</div>
+            <div class="text-wrapper-28">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
+            <div class="text-wrapper-29">yum-yumyummmmmyum-yumyum-yum-yum</div>
+            <div class="text-wrapper-30">ohohohohooHOHHhhohhohohohhohohohOHOH</div>
+            <div class="text-wrapper-31">oh!</div>
+            <div class="text-wrapper-32">yum-yumyummmmmyum-yumyum-yumyumm</div>
+            <div class="text-wrapper-33">yeahyeEEEEEeeeEaaaAAahh</div>
+            <div class="text-wrapper-34">aaaaaaAaaaaaaaah</div>
+            <div class="text-wrapper-35">heeeHeeehEHEHEHhhhehhheeheee</div>
+            <div class="text-wrapper-36">haha!ha!ha!haahaa!hahaaaaa!Haa</div>
+            <div class="text-wrapper-37">ha!ha!haahaa!haha!</div>
+            <div class="text-wrapper-38">HEheheheeeHeeehEHEHEHhhhehhhee</div>
+            <div class="text-wrapper-39">wowWOwwowWOWOWOWOwowowowow</div>
+            <div class="text-wrapper-40">crunchCRuNcHcrunchcrUNCHcrunch</div>
+            <div class="text-wrapper-41">woWOwwowWOWOWOWOwowwowoW</div>
+          </div>
+          <div class="text-wrapper-42">12 am</div>
+        </div>
+        </div>
+      </div>
+        <div class="overlap-g">
+          <div class="overlap-4">
+            <div class="overlap-group-5">
+              <div class="rectangle-3"></div>
+              <div class="text-wrapper-43">school</div>
+              <div class="text-wrapper-44">I’m</div>
+              <div class="text-wrapper-45">&gt;&gt;&gt;&gt;&gt;</div>
+              <div class="text-wrapper-46">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
+             <p class="o-OOO-oooo-OO-ooo">
+              <span class="span">oO</span>
+              <span class="text-wrapper-47">OOOoo</span>
+              <span class="span">oOOOooO</span>
+              <span class="text-wrapper-48">ooooo</span>
+              <span class="span">oooOOOOoOOoO</span>
+            </p>
+            <p class="zzzzz-ZZ-zzz-zzz-zzz">
+              <span class="text-wrapper-49">zzzzzZZZzz</span>
+              <span class="text-wrapper-50">ZzzZzzZZzz</span>
+              <span class="text-wrapper-49">ZZZzzzZ</span>
+            </p>
+              <div class="text-wrapper-51">zzzzZZzzZzzZzzZZzzZZzzzZ</div>
+            <p class="p">
+                <span class="text-wrapper-49">zzzzzZZZzz</span>
+                <span class="text-wrapper-52">ZzzZzzZZzz</span>
+                <span class="text-wrapper-49">ZZZzzzZ</span>
+              </p>  
+              <div class="text-wrapper-53">oOOOoOOOOoOOoO</div>
+              <div class="text-wrapper-54">ughUGHUuuUgGGgggHhhHhhugh</div>
+              <div class="text-wrapper-55">ughUGHUuuUgGGgggHhhHhhugh</div>
+              <div class="text-wrapper-56">eheheheheh??eh?eh???eh</div>
+              <div class="text-wrapper-57">?e...h???</div>
+              <div class="text-wrapper-58">aaaaaaaaaaah</div>
+              <div class="text-wrapper-59">aaaaaaaaaaah</div>
+              <div class="text-wrapper-60">aaaaaaaaaaah</div>
+            </div>
+            <div class="text-wrapper-61">14 am</div>    
+      </div>
+      </div>
+      <div class="overlap-gr">
+        <div class="overlap-5">
+          <div class="overlap-group-6">
+            <div class="rectangle-4"></div>
+            <div class="text-wrapper-25">dinner</div>
+            <div class="text-wrapper-26">I’m</div>
+            <div class="text-wrapper-27">&gt;&gt;&gt;&gt;&gt;</div>
+            <div class="text-wrapper-28">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
+            <div class="text-wrapper-62">yum-yumyummmmmyum-yumyum-yum</div>
+            <div class="text-wrapper-63">yum-yum</div>
+          <p class="yum-yum">
+              <span class="span">yum-</span> 
+              <span class="text-wrapper-64">yum</span>
+          </p>
+            <div class="text-wrapper-65">ohohohohooHOHHhhohohohohohoohohohohOhOH</div>
+            <div class="text-wrapper-66">yum!</div>
+            <div class="text-wrapper-67">yeahyeEEEEEeeeEeaaaAAahh</div>
+            <div class="text-wrapper-68">aaaaaaaaaaah</div>
+            <div class="text-wrapper-69">heeeHeeehEHEHEHhhhehhh</div>
+            <div class="text-wrapper-70">ha!ha!haha!hahaha!</div>
+            <div class="text-wrapper-71">wowWOwwowWOWOWOWOwowowowowoW</div>  
+          <p class="crunchcrunchcrunchcr">
+            <span class="text-wrapper-72">CRuNch</span>
+            <span class="text-wrapper-73">crunch</span>
+            <span class="text-wrapper-72">crUNCHcrunchcrun</span>
+            <span class="text-wrapper-74">ch</span>
+          </p>
+            <div class="text-wrapper-75">ha!ha!haahaa!haha!</div>
+          </div>
+          <div class="text-wrapper-42">18 am</div>
+      </div>
+    </div>
+    <div class="overlap-gro">
+      <div class="overlap-6">
+        <div class="overlap-group-7">
+          <div class="rectangle-5"></div>
+          <div class="text-wrapper-25">homework</div>
+          <div class="text-wrapper-26">I’m</div>
+          <div class="text-wrapper-27">&gt;&gt;&gt;&gt;&gt;</div>
+          <div class="text-wrapper-28">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
+          <div class="text-wrapper-76">oopsoopssopopssoopsssopospospsoposoopss</div>
+          <div class="text-wrapper-77">ohohohohooHOHHhhohohohohohoohohohOhOH</div>
+          <div class="text-wrapper-78">Ughughughughgughughguhguhgughughugh</div>
+          <div class="text-wrapper-79">yeahyeEEEEEeeeEeaaaAAahh</div>
+          <div class="text-wrapper-80">aaaaaaaaaaah</div>
+          <div class="text-wrapper-81">aaaaaaaaaaah</div>
+          <p class="aaaaaaaaaaah">
+            <span class="span">aaaa</span> 
+            <span class="text-wrapper-82">aaaa</span>
+            <span class="span">aaah</span>
+        </p>
+          <div class="text-wrapper-83">ahahhahahahahahahahHAHHHH</div>
+          <div class="text-wrapper-84">ha!ha!haahaa!hahaaaaa!Haa!</div>
+          <div class="text-wrapper-85">heeeHeeehEHEHEHhhhehhh</div>
+          <div class="text-wrapper-86">hummhuhummHUMHUHMHUHMHuhumhumhuhmhuhm</div>
+          <div class="text-wrapper-87">bawbawbBBbaAAaaaAAAAAwwwwwbaw</div>
+          <div class="text-wrapper-88">eekeekekekekeekekEEEeeeekekkKeekekek</div>
+          <div class="text-wrapper-89">eekeekekekekeekekEEEeeeekekkKeekekek</div>  
+        </div>
+        <div class="text-wrapper-42">20 am</div>
+      </div>
+    </div>
+    <div class="overlap-grou">
+      <div class="overlap-7">
+        <div class="overlap-group-8">
+          <div class="rectangle-6"></div>
+          <div class="text-wrapper-25">go home</div>
+          <div class="text-wrapper-26">I’m</div>
+          <div class="text-wrapper-27">&gt;&gt;&gt;&gt;&gt;</div>
+          <div class="text-wrapper-28">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
+          <div class="text-wrapper-90">ohoohoOhoOh</div>
+          <div class="text-wrapper-91">yoyo</div>
+          <div class="text-wrapper-92">yeah...</div>
+          <div class="text-wrapper-93">ohoohoO</div>
+          <div class="text-wrapper-94">clapclapclap</div>
+          <div class="text-wrapper-95">yo!!!!!!!!</div>
+          <div class="text-wrapper-96">ohohohohohohohOhOH</div>
+          <div class="text-wrapper-97">yoYoyoyYO</div>
+          <div class="text-wrapper-98">clap</div>
+          <div class="text-wrapper-99">YEAH</div>
+          <p class="p">
+            <span class="span">!</span> 
+            <span class="text-wrapper-100">!</span>
+            <span class="span">!!</span>
+        </p>
+        </div>
+        <div class="text-wrapper-42">23 am</div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>

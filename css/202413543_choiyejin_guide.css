@@ -1,0 +1,45 @@
+:root {
+    --apple-com-helvetica-neue-bold-font-family: "Helvetica Neue", Helvetica;
+    --apple-com-helvetica-neue-bold-font-weight: 700;
+    --apple-com-helvetica-neue-bold-font-size: 17.5px;
+    --apple-com-helvetica-neue-bold-letter-spacing: 0px;
+    --apple-com-helvetica-neue-bold-line-height: 22px;
+    --apple-com-helvetica-neue-bold-font-style: normal;
+    --apple-com-helvetica-neue-medium-font-family: "Helvetica Neue", Helvetica;
+    --apple-com-helvetica-neue-medium-font-weight: 500;
+    --apple-com-helvetica-neue-medium-font-size: 19.1953125px;
+    --apple-com-helvetica-neue-medium-letter-spacing: 0px;
+    --apple-com-helvetica-neue-medium-line-height: 25px;
+    --apple-com-helvetica-neue-medium-font-style: normal;
+    --apple-com-helvetica-neue-regular-font-family: "Helvetica Neue", Helvetica;
+    --apple-com-helvetica-neue-regular-font-weight: 400;
+    --apple-com-helvetica-neue-regular-font-size: 26.03125px;
+    --apple-com-helvetica-neue-regular-letter-spacing: 0.19599999487400055px;
+    --apple-com-helvetica-neue-regular-line-height: 32px;
+    --apple-com-helvetica-neue-regular-font-style: normal;
+    --apple-com-helvetica-neue-regular-underline-font-family: "Helvetica Neue",
+      Helvetica;
+    --apple-com-helvetica-neue-regular-underline-font-weight: 400;
+    --apple-com-helvetica-neue-regular-underline-font-size: 12px;
+    --apple-com-helvetica-neue-regular-underline-letter-spacing: -0.11999999731779099px;
+    --apple-com-helvetica-neue-regular-underline-line-height: 16px;
+    --apple-com-helvetica-neue-regular-underline-font-style: normal;
+    --apple-com-semantic-heading-2-font-family: "Helvetica Neue", Helvetica;
+    --apple-com-semantic-heading-2-font-weight: 700;
+    --apple-com-semantic-heading-2-font-size: 50.859375px;
+    --apple-com-semantic-heading-2-letter-spacing: -0.2800000011920929px;
+    --apple-com-semantic-heading-2-line-height: 60px;
+    --apple-com-semantic-heading-2-font-style: normal;
+    --apple-com-semantic-heading-3-font-family: "Helvetica Neue", Helvetica;
+    --apple-com-semantic-heading-3-font-weight: 700;
+    --apple-com-semantic-heading-3-font-size: 37.1875px;
+    --apple-com-semantic-heading-3-letter-spacing: 0px;
+    --apple-com-semantic-heading-3-line-height: 44px;
+    --apple-com-semantic-heading-3-font-style: normal;
+    --apple-com-semantic-item-font-family: "Helvetica Neue", Helvetica;
+    --apple-com-semantic-item-font-weight: 400;
+    --apple-com-semantic-item-font-size: 12px;
+    --apple-com-semantic-item-letter-spacing: -0.11999999731779099px;
+    --apple-com-semantic-item-line-height: 16px;
+    --apple-com-semantic-item-font-style: normal;
+  }
